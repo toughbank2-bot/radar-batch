@@ -10,19 +10,20 @@ permissions:
 
 jobs:
   prices:
-    runs-on: ubuntu-latest
-    timeout-minutes: 40
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
-          python-version: "3.11"
-      - run: pip install yfinance pandas requests xlrd
+          python-version: "3.12"
+      - run: pip install pandas xlrd curl_cffi
       - run: python scripts/fetch_prices.py
       - name: 保存（変更があればコミット）
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/prices_all.json
+          git add data/
           git diff --cached --quiet || git commit -m "株価を更新 $(TZ=Asia/Tokyo date +%Y/%m/%d)"
           git push
