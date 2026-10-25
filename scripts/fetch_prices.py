@@ -80,6 +80,7 @@ def yahoo(code):
     q = res["indicators"]["quote"][0]
     close = q["close"]
     o, h, lo, v = q.get("open") or [], q.get("high") or [], q.get("low") or [], q.get("volume") or []
+    adj = ((res["indicators"].get("adjclose") or [{}])[0].get("adjclose")) or []
     s, ohlcv = {}, {}
     for i, (t, c) in enumerate(zip(ts, close)):
         if c is None:
@@ -87,7 +88,8 @@ def yahoo(code):
         d = datetime.fromtimestamp(t, JST).strftime("%Y/%m/%d")
         s[d] = round(float(c), 1)
         ohlcv[d] = [_r(o[i] if i < len(o) else None), _r(h[i] if i < len(h) else None),
-                    _r(lo[i] if i < len(lo) else None), _r(c), int(v[i]) if i < len(v) and v[i] is not None else None]
+                    _r(lo[i] if i < len(lo) else None), _r(c), int(v[i]) if i < len(v) and v[i] is not None else None,
+                    _r(adj[i] if i < len(adj) else None, 4)]
     if not s:
         raise RuntimeError("yahoo 空データ")
     return s, ohlcv
@@ -105,7 +107,7 @@ def stooq(code):
     if {"Open", "High", "Low", "Volume"} <= set(df.columns):
         for row in df.itertuples(index=False):
             ohlcv[row.Date.replace("-", "/")] = [_r(row.Open), _r(row.High), _r(row.Low), _r(row.Close),
-                                                 int(row.Volume) if pd.notna(row.Volume) else None]
+                                                 int(row.Volume) if pd.notna(row.Volume) else None, None]
     return s, ohlcv
 
 
@@ -150,8 +152,8 @@ def save_ohlcv(ohlcv_all, ohlcv_codes):
     dates = sorted(d for d, n in cnt.items() if n >= need)[-OHLCV_DAYS:]
     out = {
         "updated": datetime.now(JST).strftime("%Y/%m/%d %H:%M JST"),
-        "source": "Yahoo!ファイナンス（一部 stooq）の日足。株式分割調整済み（配当調整なし）",
-        "fields": ["open", "high", "low", "close", "volume"],
+        "source": "Yahoo!ファイナンス（一部 stooq）の日足。open〜closeは株式分割調整済み（配当調整なし）、adjcloseは配当も調整（stooqの銘柄は空）",
+        "fields": ["open", "high", "low", "close", "volume", "adjclose"],
         "dates": dates,
         "data": {c: [ohlcv_all[c].get(d) for d in dates] for c in sorted(targets)},
     }
