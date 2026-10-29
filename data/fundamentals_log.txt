@@ -1,0 +1,12 @@
+2026/10/29 16:52 JST
+codes.json：1733銘柄
+200/1733 処理済み（取得 193）
+400/1733 処理済み（取得 390）
+600/1733 処理済み（取得 590）
+800/1733 処理済み（取得 774）
+1000/1733 処理済み（取得 957）
+1200/1733 処理済み（取得 1141）
+1400/1733 処理済み（取得 1328）
+1600/1733 処理済み（取得 1510）
+今回取得：1637/1733銘柄、保存 1637銘柄、623秒
+取得できなかった銘柄：60。例：5602 YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')；5603 YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')；5607 YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')；5609 YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')；5612 YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')；5631 YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')；5632 YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')；5644 YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')；5658 YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')；5659 YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
