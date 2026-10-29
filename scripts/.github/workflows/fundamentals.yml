@@ -1,0 +1,29 @@
+name: fundamentals
+
+on:
+  schedule:
+    - cron: "40 12 * * 6"   # 毎週土曜 21:40 JST（UTC 12:40）
+  workflow_dispatch: {}      # Actions タブの「Run workflow」で手動実行もできる
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install yfinance pandas
+      - run: python scripts/fetch_fundamentals.py
+      - name: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/fundamentals.json data/fundamentals_log.txt || true
+          git diff --cached --quiet || git commit -m "財務指標を更新"
+          git pull --rebase || true
+          git push
