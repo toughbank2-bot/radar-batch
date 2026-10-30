@@ -1,13 +1,14 @@
-2026/10/29 23:46 JST
+2026/10/30 23:34 JST
 codes.json：1733銘柄
 JPX一覧を取得できず（codes.json のみ使用）：ValueError('Excel file format cannot be determined, you must specify an engine manually.')
 codes_ohlcv.json：2163銘柄（4本値・出来高を保存）
 500/2847 処理済み（終値 247、4本値 489）
 1000/2847 処理済み（終値 506、4本値 979）
-1500/2847 処理済み（終値 834、4本値 1469）
-2000/2847 処理済み（終値 1259、4本値 1960）
-2500/2847 処理済み（終値 1553、4本値 2449）
-今回取得：1696/1733銘柄（yahoo 1696、stooq 0）
-4本値の保存：2143/2164銘柄、2026/07/31〜2026/10/29（60営業日）
-取得できなかった銘柄：58。例：1726 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；1821 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2058 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2150 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2218 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2540 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2551 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2692 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2902 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2919 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；3198 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；3442 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；3504 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；3546 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；3593 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta
-保存：1696銘柄、2025/10/03〜2026/10/29（260営業日）、385秒
+1500/2847 処理済み（終値 833、4本値 1468）
+2000/2847 処理済み（終値 1258、4本値 1959）
+2500/2847 処理済み（終値 1552、4本値 2448）
+今回取得：1695/1733銘柄（yahoo 1695、stooq 0）
+4本値の保存：2143/2164銘柄、2026/08/03〜2026/10/30（60営業日）
+前回の値を残した銘柄：1
+取得できなかった銘柄：59。例：1726 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；1821 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2058 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2150 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2218 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2540 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2551 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2692 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2919 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；2902 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；3198 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；3442 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；3504 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；3546 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta；3593 yahoo HTTP 404 / stooq 200 '<!DOCTYPE html><html><head><meta
+保存：1696銘柄、2025/10/06〜2026/10/30（260営業日）、145秒
